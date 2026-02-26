@@ -1,5 +1,5 @@
 function runTypingEffect() {
-  const text = 'Farai Maxwell Marumbwa (PhD).';
+  const text = 'Farai Marumbwa (PhD)';
   const typingElement = document.getElementById('typing-text');
   const typingDelay = 100;
 

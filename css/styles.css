@@ -60,16 +60,242 @@
   .header .social i {
     font-size: 30px;
   }
+
   .header .roles {
     font-size: 18px !important;
   }
+
   .about-content {
     flex-direction: column;
   }
+
   .stats .stat {
     border-right: 0 !important;
     margin-bottom: 40px;
     border-bottom: var(--bs-dark) solid 1px;
     padding-bottom: 20px;
+  }
+}
+
+/* ================================
+   GLOBAL STYLES
+================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Lora', serif;
+}
+
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* ================================
+   HEADER / HERO SECTION
+================================ */
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.85)),
+    url("../images/hero-bg.jpg") center/cover no-repeat;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.roles {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.secondary-role {
+  max-width: 700px;
+  opacity: 0.85;
+}
+
+.social {
+  bottom: 40px;
+}
+
+.social a {
+  transition: 0.3s ease;
+}
+
+.social a:hover {
+  transform: translateY(-5px);
+  color: #0d6efd !important;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-dark:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* ================================
+   ABOUT SECTION
+================================ */
+.about {
+  background: #ffffff;
+}
+
+.about-img {
+  width: 250px;
+  border: 6px solid #0d6efd;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+  line-height: 1.8;
+}
+
+/* ================================
+   PROFILE SECTION
+================================ */
+.profile {
+  background-color: #f8f9fa;
+}
+
+.list-group-item {
+  border: none;
+  background: transparent;
+}
+
+.list-group-item h5 {
+  font-weight: 600;
+}
+
+/* ================================
+   SKILL TAGS
+================================ */
+.tech-tags span {
+  border-radius: 30px;
+  font-size: 0.85rem;
+  transition: 0.3s ease;
+}
+
+.tech-tags span:hover {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+/* ================================
+   PORTFOLIO
+================================ */
+.project {
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.project img {
+  transition: 0.4s ease;
+}
+
+.project:hover img {
+  transform: scale(1.08);
+}
+
+.project:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   SERVICES
+================================ */
+.services {
+  background: linear-gradient(to right,
+      #0f2027,
+      #203a43,
+      #2c5364);
+}
+
+.services h3 {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.services i {
+  transition: 0.3s ease;
+}
+
+.services .col-md-4:hover i {
+  transform: scale(1.2);
+  color: #fff !important;
+}
+
+/* ================================
+   CONTACT SECTION
+================================ */
+.contact {
+  background: linear-gradient(to right,
+      #141e30,
+      #243b55);
+}
+
+.contact input,
+.contact textarea {
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+
+.contact button {
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  font-size: 0.9rem;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .social {
+    position: static !important;
+    margin-top: 20px;
   }
 }

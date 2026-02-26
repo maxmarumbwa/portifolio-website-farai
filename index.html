@@ -5,60 +5,427 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts & Icons -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="css/font-awesome.css" />
-  <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/lightbox.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Bootstrap + lightbox -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+  <style>
+    /* ----- ROOT & GLOBAL ----- */
+    :root {
+      --primary: #0d6efd;
+      --primary-light: #3b82f6;
+      --primary-bright: #00a6ff;
+      --accent-glow: #ffb347;
+      --dark-bg: #0b0f1c;
+      --text-light: #f1f5f9;
+      --text-muted: #cbd5e1;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark-bg);
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .text-primary {
+      color: var(--primary) !important;
+    }
+
+    /* ----- HEADER – MUCH BRIGHTER GRADIENT ----- */
+    .header {
+      position: relative;
+      isolation: isolate;
+      background: transparent;
+      /* let gradient overlay shine */
+    }
+
+    /* vibrant animated gradient background */
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, #ffd966, #ffb347, #ff8c42, #ff6b6b, #a463f5, #3b82f6);
+      background-size: 400% 400%;
+      animation: vibrantShift 12s ease infinite;
+      z-index: 0;
+      opacity: 1;
+      /* full brightness */
+    }
+
+    /* dark pattern overlay reduced to keep brightness */
+    .header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6IiBmaWxsPSIjMjIyQTM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wIDIwaDIwdjIwSDB6TTIwIDBoMjB2MjBIMjB6IiBmaWxsPSIjMzM0QjY4IiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48L3N2Zz4=') repeat;
+      opacity: 0.2;
+      /* lighter pattern */
+      z-index: 1;
+    }
+
+    @keyframes vibrantShift {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      25% {
+        background-position: 50% 30%;
+      }
+
+      50% {
+        background-position: 100% 70%;
+      }
+
+      75% {
+        background-position: 50% 80%;
+      }
+
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    .text-container {
+      z-index: 3;
+      background: radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 90%);
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+
+    #typing-text {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.8rem, 10vw, 6rem);
+      text-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+      border-right: 4px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blinkCursor 0.8s step-end infinite;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    @keyframes blinkCursor {
+
+      0%,
+      100% {
+        border-color: white;
+      }
+
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .roles {
+      font-weight: 500;
+      letter-spacing: 4px;
+      word-spacing: 6px;
+      background: linear-gradient(120deg, #fff, #fef9c3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.4rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .secondary-role {
+      max-width: 750px;
+      margin: 0.8rem auto 0;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(6px);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline-light {
+      border-width: 2.5px;
+      font-weight: 600;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+      color: white;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      color: #0b0f1c;
+      transform: scale(1.07) translateY(-3px);
+      box-shadow: 0 20px 30px -5px rgba(255, 255, 255, 0.4);
+    }
+
+    .social {
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 1.8rem !important;
+    }
+
+    .social a {
+      opacity: 0.9;
+      transition: var(--transition);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    }
+
+    .social a:hover {
+      opacity: 1;
+      transform: translateY(-6px) scale(1.15);
+      filter: drop-shadow(0 0 18px white);
+    }
+
+    .social i {
+      font-size: 2.3rem;
+    }
+
+    /* ----- rest of your existing styles (improved but unchanged in spirit) ----- */
+    .about {
+      background-color: #f8fafc !important;
+      color: #1e293b;
+    }
+
+    .about .text-primary {
+      color: #0d6efd !important;
+    }
+
+    .about hr {
+      height: 3px;
+      background: #0d6efd;
+      opacity: 0.5;
+      width: 80px;
+    }
+
+    .about-img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .about-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 50px -10px #0d6efd;
+    }
+
+    .profile {
+      background: linear-gradient(145deg, #0d111e, #030614);
+      padding: 5rem 0;
+    }
+
+    .profile h3 {
+      color: white;
+      border-left: 6px solid #0d6efd;
+      padding-left: 1rem;
+    }
+
+    .list-group-item {
+      background: transparent !important;
+      border-color: rgba(255, 255, 255, 0.07) !important;
+      color: #e2e8f0;
+    }
+
+    .list-group-item h5 {
+      color: #0d6efd;
+    }
+
+    .col-md-6 ul li::before {
+      content: '▹';
+      color: #0d6efd;
+      left: 0;
+    }
+
+    .tech-tags .badge {
+      background: rgba(13, 110, 253, 0.1) !important;
+      color: #b9c9e0 !important;
+      border: 1px solid rgba(13, 110, 253, 0.3);
+    }
+
+    .tech-tags .badge:hover {
+      background: #0d6efd !important;
+      color: #000 !important;
+    }
+
+    .btn-outline-dark {
+      border: 2px solid #0d6efd;
+      color: #0d6efd;
+      border-radius: 40px;
+    }
+
+    .btn-outline-dark:hover {
+      background: #0d6efd;
+      color: black;
+    }
+
+    .btn-dark {
+      background: #0d6efd;
+      border: none;
+      border-radius: 40px;
+      color: black;
+    }
+
+    .btn-dark:hover {
+      background: white;
+      color: black;
+    }
+
+    .portfolio {
+      background: #f1f5f9 !important;
+    }
+
+    .portfolio .project {
+      overflow: hidden;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .portfolio .project:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 40px -10px #0d6efd;
+    }
+
+    .portfolio img {
+      transition: transform 1.2s;
+    }
+
+    .portfolio .project:hover img {
+      transform: scale(1.07);
+    }
+
+    .services {
+      background: #0a0e1a !important;
+    }
+
+    .services .col-md-4 {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 24px;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .services .col-md-4:hover {
+      background: rgba(13, 110, 253, 0.15);
+      border-color: #0d6efd;
+      transform: scale(1.02);
+    }
+
+    .services i {
+      background: linear-gradient(145deg, #3b82f6, #0d6efd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact {
+      background: #0b0f1c !important;
+    }
+
+    .contact form {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.02) !important;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+      color: white !important;
+    }
+
+    .form-control:focus {
+      border-bottom-color: #0d6efd !important;
+    }
+
+    .btn-primary {
+      background: #0d6efd;
+      border-radius: 40px;
+    }
+
+    .btn-primary:hover {
+      background: white;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      #typing-text {
+        white-space: normal;
+        border-right: none;
+        font-size: 3rem;
+      }
+
+      .secondary-role {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .social {
+        gap: 1rem !important;
+        bottom: 1rem;
+      }
+
+      .social i {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
   <title>Farai Maxwell Marumbwa (PhD) | Geospatial data scientist & Web Developer</title>
 </head>
 
 <body>
 
+  <!-- Header with ultra-bright gradient -->
   <header class="header vh-100 text-center position-relative">
-    <div class="text-container position-relative d-flex flex-column justify-content-center align-items-center h-100">
-
+    <div
+      class="text-container position-relative d-flex flex-column justify-content-center align-items-center h-100 px-3">
       <h1 id="typing-text" class="display-1 fw-bold text-white"></h1>
-
-      <p class="roles text-white text-uppercase fs-4">
-        <span>Geospatial Data Scientist & Full-Stack Geospatial Engineer</span>
-
+      <p class="roles text-white text-uppercase fs-4 mb-1">Geospatial Data Scientist & Full-Stack Geospatial Engineer
       </p>
-
+      <p class="text-white fs-5 secondary-role">Architecting Scalable Geospatial Data Systems for Climate, Disaster Risk
+        & Environmental Intelligence</p>
       <a href="#about" class="btn btn-outline-light btn-lg mt-3">
         <div class="d-flex">
-          <div class="me-3">
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="text-start">
-            <span>More About Me</span>
-          </div>
+          <div class="me-3"><i class="fas fa-chevron-down"></i></div>
+          <div class="text-start"><span>More About Me</span></div>
         </div>
       </a>
-
       <div class="social d-flex gap-3 position-absolute">
-        <a href="#">
-          <i class="fab fa-twitter fa-3x text-white"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-instagram fa-3x text-white"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-linkedin fa-3x text-white"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-facebook fa-3x text-white"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-youtube fa-3x text-white"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-github fa-3x text-white"></i>
-        </a>
+        <a href="#"><i class="fab fa-twitter fa-3x text-white"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-3x text-white"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-3x text-white"></i></a>
+        <a href="#"><i class="fab fa-facebook fa-3x text-white"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-3x text-white"></i></a>
+        <a href="#"><i class="fab fa-github fa-3x text-white"></i></a>
       </div>
     </div>
   </header>
@@ -71,78 +438,62 @@
         <hr class="w-25 mx-auto" />
       </div>
       <div class="about-content d-flex gap-5 align-items-center h-100">
-        <img src="images/farai.png" alt="" class="about-img img-fluid rounded-circle" />
-        <p class="lead">
-          I am a Geospatial Data Scientist with 17+ years of experience developing
-          Earth-observation-driven decision-support systems for environmental and climate risk monitoring applications.
-          I specialize in converting complex environmental and climate datasets
-          into standardized and API-enabled data infrastructures. I have experience in designing geospatial ETL
-          pipelines and satellite time-series analytics using Google Earth Engine, Python, and R; spatial databases with
-          Postgres/PostGIS & mongoDb and web-based geospatial platforms (Leaflet, and GeoServer) including deploying
-          REST APIs (Django/Flask/FAST API/Nodejs). i also deveveloped national and regional early-warning systems for
-          governments and international organizations such as the World Bank, UNICEF, UN-WFP, and SADC, translating
-          scientific analysis and complex geospatial analysis into operational, analysis-ready datasets and
-          policy-relevant data products.
-        </p>
+        <img src="images/farai.png" alt="Farai" class="about-img img-fluid rounded-circle"
+          onerror="this.src='https://via.placeholder.com/260x260?text=Farai+M'" />
+        <p class="lead">I am a Geospatial Data Scientist and Full stack developer with 17+ years of experience
+          developing Earth-observation-driven decision-support systems for environmental and climate risk monitoring
+          applications. I specialize in converting complex environmental and climate datasets into standardized and
+          API-enabled data infrastructures using Django, Flask, FAST API and Nodejs. I have experience in designing
+          geospatial ETL pipelines and satellite time-series analytics using Google Earth Engine, Python, and R; spatial
+          databases ( Postgres/PostGIS & mongoDb) and web-based geospatial libraries (Leaflet, and GeoServer). I have
+          also developed national and regional early-warning systems for governments and international organizations
+          such as the World Bank, UNICEF, UN-WFP, and SADC, translating scientific analysis and complex geospatial
+          analysis into operational, analysis-ready datasets and policy-relevant data products.</p>
       </div>
     </div>
   </section>
 
-  <!-- Profile & Skills -->
-  <section class="profile my-6">
+  <!-- Profile & Skills (same as your original but with bright header only) -->
+  <section class="profile my-6 py-5">
     <div class="container">
-      <div class="row">
+      <div class="row g-5">
         <div class="col-md-6">
           <h3 class="text-uppercase fw-bold">Profile</h3>
-          <p>
-            Here is some more info about myself to help you get to know me
-            better.
-          </p>
+          <p class="mb-4">Engineering Earth Observation Systems for Climate Intelligence, Risk Monitoring & National
+            Decision-Making</p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item mb-3">
-              <h5 class="text-transform">
-                <i class="fas fa-user text-primary"></i> Full Name:
-              </h5>
+              <h5><i class="fas fa-user text-primary"></i> Full Name:</h5>
               <p>Farai Maxwell Marumbwa</p>
             </li>
             <li class="list-group-item mb-3">
-              <h5 class="text-transform">
-                <i class="fas fa-calendar text-primary"></i> Birth Date:
-              </h5>
+              <h5><i class="fas fa-calendar text-primary"></i> Birth Date:</h5>
               <p>April 12, 1983</p>
             </li>
             <li class="list-group-item mb-3">
-              <h5 class="text-transform">
-                <i class="fas fa-building text-primary"></i> Current Position:
-              </h5>
+              <h5><i class="fas fa-building text-primary"></i> Current Position:</h5>
               <p>Geospatial data analyst consultant</p>
             </li>
             <li class="list-group-item mb-3">
-              <h5 class="text-transform">
-                <i class="fas fa-home text-primary"></i> Website:
-              </h5>
-              <p>https://github.com/maxmarumbwa</p>
+              <h5><i class="fas fa-home text-primary"></i> Website:</h5>
+              <p>github.com/maxmarumbwa</p>
             </li>
             <li class="list-group-item mb-3">
-              <h5 class="text-transform">
-                <i class="fas fa-envelope text-primary"></i> Email:
-              </h5>
+              <h5><i class="fas fa-envelope text-primary"></i> Email:</h5>
               <p>maxmarumbwa@gmail.com</p>
             </li>
           </ul>
         </div>
         <div class="col-md-6">
           <h3 class="text-uppercase fw-bold">Technical Skills</h3>
-
-          <h5 class="mt-4 fw-bold">Geospatial & Data Science</h5>
+          <h5 class="mt-4 fw-bold text-primary">Geospatial & Data Science</h5>
           <ul>
             <li>EO time-series analysis & ETL workflows (NDVI, SPI, RFE)</li>
             <li>Drought, flood, crop, water & climate risk modeling</li>
             <li>Production workflows in Google Earth Engine</li>
-            <li>Python & R for automation analysis</li>
+            <li>Python & R for automated GIS analysis</li>
           </ul>
-
-          <h5 class="mt-4 fw-bold">Full-Stack Geospatial Engineering</h5>
+          <h5 class="mt-4 fw-bold text-primary">Full-Stack Geospatial Engineering</h5>
           <ul>
             <li>Backend & APIs: Django, Flask, FastAPI, Django REST Framework, Node.js</li>
             <li>Frontend: React, HTML, CSS, Bootstrap, Leaflet</li>
@@ -150,55 +501,52 @@
             <li>Data pipelines & ETL: Python-based ingestion, transformation & REST API delivery</li>
             <li>DevOps & Cloud: Git, GitHub, Docker</li>
           </ul>
-
-          <h5 class="mt-4 fw-bold">Data Engineering & ETL</h5>
+          <h5 class="mt-4 fw-bold text-primary">Data Engineering & ETL</h5>
           <ul>
             <li>Geospatial ETL pipeline development (Python, GeoPandas, Pandas, SQL, R)</li>
             <li>API, CSV, raster & satellite data ingestion</li>
             <li>PostgreSQL/PostGIS, MongoDB, MySQL</li>
             <li>Automation of analytics-ready datasets for web maps & decision-support systems</li>
           </ul>
-
-          <h5 class="mt-4 fw-bold"> Capacity building</h5>
+          <h5 class="mt-4 fw-bold text-primary">Capacity building</h5>
           <ul>
             <li>Training and mentoring junior GIS professionals</li>
             <li>Supervising GIS projects and teams</li>
             <li>Conducting workshops and webinars on geospatial data science and engineering</li>
           </ul>
-
-        </div>
-        <!-- Tech Stack Tags (Optional visual element) -->
-        <div class="tech-tags mt-4">
-          <h6 class="mt-4 fw-bold"><i class="fas fa-tags me-2"></i>Core Technologies:</h6>
-          <div>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Python, ArcPy</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">R</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">JavaScript</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">PostGIS, MongoDB</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Django</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">GeoServer</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">GEE</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">QGIS</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Docker</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">AWS</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Azure</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Git/GitHub</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Gdal</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">google earth engine</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">leaflet</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Nodejs</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">Tableau / PowerBI / R shinny</span>
-            <span class="badge bg-light text-dark me-2 mb-2 p-2">linux</span>
-
-          </div>
-        </div>
-        <div class="row mt-5 text-center">
-          <div class="col-12">
-            <a href="#" class="btn btn-outline-dark btn-lg text-uppercase px-5 mx-3 my-2">Hire Me Now</a>
-            <a href="#" class="btn btn-dark btn-lg text-uppercase px-5 mx-3 my-2">Download CV</a>
-          </div>
         </div>
       </div>
+      <!-- Tech Tags -->
+      <div class="tech-tags mt-5">
+        <h6 class="fw-bold"><i class="fas fa-tags me-2 text-primary"></i>Core Technologies:</h6>
+        <div>
+          <span class="badge bg-light text-dark me-2 mb-2 p-2">Python, ArcPy</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">R</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">JavaScript</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Postgres/PostGIS, MongoDB</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Django</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">GeoServer</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">GEE</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">QGIS</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Docker</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">AWS</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Azure</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Git/GitHub</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Gdal</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">google earth engine</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">leaflet</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Nodejs</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">Tableau / PowerBI / R shinny</span><span
+            class="badge bg-light text-dark me-2 mb-2 p-2">linux</span>
+        </div>
+      </div>
+      <div class="row mt-5 text-center">
+        <div class="col-12">
+          <a href="#" class="btn btn-outline-dark btn-lg text-uppercase px-5 mx-3 my-2">Hire Me Now</a>
+          <a href="#" class="btn btn-dark btn-lg text-uppercase px-5 mx-3 my-2">Download CV</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Portfolio -->
@@ -207,63 +555,49 @@
       <div class="text-center mb-5">
         <h4 class="text-uppercase fw-bold text-primary">Portfolio</h4>
         <hr class="w-25 mx-auto" />
-        <h2 class="mb-4">Check Out My Work</h2>
-        <p class="lead">Here is a small sample of my projects.</p>
+        <h2 class="mb-4 text-dark">Check Out My Work</h2>
+        <p class="lead text-dark">Here is a small sample of my projects.</p>
       </div>
-      <div class="row">
+      <div class="row g-4">
         <div class="col-md-6 mb-4">
-          <div class="project shadow-lg rounded-5">
-            <a href="images/project1.jpg" data-lightbox="images" data-title="Cliboard Landing Page">
-              <img src="images/project1.jpg" alt="" class="img-fluid rounded-3" />
-            </a>
-          </div>
+          <div class="project shadow-lg rounded-5"><a href="images/project1.jpg" data-lightbox="images"
+              data-title="Clipboard Landing Page"><img src="images/project1.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400?text=Project+1'" alt=""
+                class="img-fluid rounded-3" /></a></div>
         </div>
-
         <div class="col-md-6 mb-4">
-          <div class="project shadow-lg rounded-5">
-            <a href="images/project2.jpg" data-lightbox="images" data-title="Loop Studios Website">
-              <img src="images/project2.jpg" alt="" class="img-fluid rounded-3" />
-            </a>
-          </div>
+          <div class="project shadow-lg rounded-5"><a href="images/project2.jpg" data-lightbox="images"
+              data-title="Loop Studios"><img src="images/project2.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400?text=Project+2'" alt=""
+                class="img-fluid rounded-3" /></a></div>
         </div>
-
         <div class="col-md-6 mb-4">
-          <div class="project shadow-lg rounded-5">
-            <a href="images/project3.jpg" data-lightbox="images" data-title="Shortly Website">
-              <img src="images/project3.jpg" alt="" class="img-fluid rounded-3" />
-            </a>
-          </div>
+          <div class="project shadow-lg rounded-5"><a href="images/project3.jpg" data-lightbox="images"
+              data-title="Shortly Website"><img src="images/project3.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400?text=Project+3'" alt=""
+                class="img-fluid rounded-3" /></a></div>
         </div>
-
         <div class="col-md-6 mb-4">
-          <div class="project shadow-lg rounded-5">
-            <a href="images/project4.jpg" data-lightbox="images" data-title="Flyo Website">
-              <img src="images/project4.jpg" alt="" class="img-fluid rounded-3" />
-            </a>
-          </div>
+          <div class="project shadow-lg rounded-5"><a href="images/project4.jpg" data-lightbox="images"
+              data-title="Flyo Website"><img src="images/project4.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400?text=Project+4'" alt=""
+                class="img-fluid rounded-3" /></a></div>
         </div>
-
         <div class="col-md-6 mb-4">
-          <div class="project shadow-lg rounded-5">
-            <a href="images/project5.jpg" data-lightbox="images" data-title="Bookmark Website">
-              <img src="images/project5.jpg" alt="" class="img-fluid rounded-3" />
-            </a>
-          </div>
+          <div class="project shadow-lg rounded-5"><a href="images/project5.jpg" data-lightbox="images"
+              data-title="Bookmark Website"><img src="images/project5.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400?text=Project+5'" alt=""
+                class="img-fluid rounded-3" /></a></div>
         </div>
-
         <div class="col-md-6 mb-4">
-          <div class="project shadow-lg rounded-5">
-            <a href="images/project6.jpg" data-lightbox="images" data-title="Grid Layout">
-              <img src="images/project6.jpg" alt="" class="img-fluid rounded-3" />
-            </a>
-          </div>
+          <div class="project shadow-lg rounded-5"><a href="images/project6.jpg" data-lightbox="images"
+              data-title="Grid Layout"><img src="images/project6.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400?text=Project+6'" alt=""
+                class="img-fluid rounded-3" /></a></div>
         </div>
       </div>
     </div>
   </section>
-
-
-
 
   <!-- Services -->
   <section class="services text-bg-dark py-5 position-relative">
@@ -272,65 +606,39 @@
         <h4 class="text-uppercase fw-bold text-primary">Services</h4>
         <hr class="w-25 mx-auto" />
         <h2 class="mb-4">What Can I Deliver?</h2>
-        <p class="lead">
-          I design and deploy Earth Observation-driven geospatial systems,
-          analytics pipelines, and decision-support platforms for climate,
-          environmental and disaster risk management.
-        </p>
+        <p class="lead">I design and deploy Earth Observation-driven geospatial systems, analytics pipelines, and
+          decision-support platforms for climate, environmental and disaster risk management.</p>
       </div>
-
       <div class="row">
-
-        <div class="col-md-4 text-center">
-          <i class="fas fa-satellite fa-3x text-primary mb-3"></i>
+        <div class="col-md-4 text-center"><i class="fas fa-satellite fa-3x text-primary mb-3"></i>
           <h3 class="fs-3">EO Analytics & Climate Risk Modeling</h3>
           <hr class="w-25 mx-auto" />
-          <p class="fs-5">
-            Development of satellite-based drought, flood, crop and climate risk
-            analytics using Google Earth Engine, Python and R.
-            Design of automated workflows generating NDVI, SPI, rainfall
-            anomalies and impact indicators for operational monitoring.
-          </p>
+          <p class="fs-5">Development of satellite-based drought, flood, crop and climate risk analytics using Google
+            Earth Engine, Python and R. Design of automated workflows generating NDVI, SPI, rainfall anomalies and
+            impact indicators.</p>
         </div>
-
-        <div class="col-md-4 text-center">
-          <i class="fas fa-database fa-3x text-primary mb-3"></i>
+        <div class="col-md-4 text-center"><i class="fas fa-database fa-3x text-primary mb-3"></i>
           <h3 class="fs-3">Geospatial Data Engineering & APIs</h3>
           <hr class="w-25 mx-auto" />
-          <p class="fs-5">
-            Design of geospatial ETL pipelines transforming raw satellite and
-            climate datasets into analysis-ready infrastructures.
-            Development of REST APIs (Django, Flask) and spatial databases
-            (PostGIS) powering scalable geospatial platforms.
+          <p class="fs-5">Design of geospatial ETL pipelines transforming raw satellite and climate datasets into
+            analysis-ready infrastructures. Development of REST APIs (Django, Flask) and spatial databases (PostGIS).
           </p>
         </div>
-
-        <div class="col-md-4 text-center">
-          <i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
+        <div class="col-md-4 text-center"><i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
           <h3 class="fs-3">Dashboards & Decision Support Systems</h3>
           <hr class="w-25 mx-auto" />
-          <p class="fs-5">
-            Development of interactive web-based geospatial dashboards using
-            Leaflet, GeoServer and modern frontend frameworks.
-            Supporting governments and international organizations with
-            operational early warning and risk monitoring systems.
-          </p>
+          <p class="fs-5">Development of interactive web-based geospatial dashboards using Leaflet, GeoServer and modern
+            frameworks for early warning and risk monitoring.</p>
         </div>
-        <div class="col-md-4 text-center">
-          <i class="fas fa-chalkboard-teacher fa-3x text-primary mb-3"></i>
+        <div class="col-md-4 text-center mx-auto"><i class="fas fa-chalkboard-teacher fa-3x text-primary mb-3"></i>
           <h3 class="fs-3">Technical Advisory & Capacity Building</h3>
           <hr class="w-25 mx-auto" />
-          <p class="fs-5">
-            Strategic advisory, technical documentation, code review,
-            and advanced training in Google Earth Engine, Python-based
-            geospatial engineering, and cloud-enabled EO workflows.
-          </p>
+          <p class="fs-5">Strategic advisory, technical documentation, code review, and advanced training in Google
+            Earth Engine, Python-based geospatial engineering.</p>
         </div>
-
       </div>
     </div>
   </section>
-
 
   <!-- Contact -->
   <section class="contact text-bg-dark bg-gradient py-5">
@@ -341,64 +649,57 @@
             <h4 class="text-uppercase fw-bold text-primary">Contact</h4>
             <hr class="w-25 mx-auto" />
             <h2 class="mb-4">I'd love to hear from you.</h2>
-            <p class="lead">
-              If you have any questions or would like to work together, please
-              contact me with the form below.
-            </p>
+            <p class="lead">If you have any questions or would like to work together, please contact me with the form
+              below.</p>
           </div>
-
-          <!-- Form -->
           <form name="contact" netlify>
-            <div class="mb-5">
-              <input type="text"
+            <div class="mb-5"><input type="text"
                 class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
-                name="name" placeholder="Name" />
-            </div>
-            <div class="mb-5">
-              <input type="email"
+                name="name" placeholder="Name" /></div>
+            <div class="mb-5"><input type="email"
                 class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
-                name="email" placeholder="Email" />
-            </div>
-            <div class="mb-5">
-              <textarea
+                name="email" placeholder="Email" /></div>
+            <div class="mb-5"><textarea
                 class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
-                name="message" placeholder="Message"></textarea>
-            </div>
-            <div class="mb-5 d-grid">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+                name="message" placeholder="Message"></textarea></div>
+            <div class="mb-5 d-grid"><button type="submit" class="btn btn-primary">Submit</button></div>
           </form>
         </div>
       </div>
-      <!-- Footer -->
-      <div class="d-flex mt-5">
-        <p class="flex-grow-1">
-          Copyright &copy; 2026 | Design By Farai Maxwell Marumbwa | All Rights Reserved
-        </p>
+      <div class="d-flex flex-wrap mt-5 align-items-center">
+        <p class="flex-grow-1">Copyright &copy; 2026 | Design By Farai Maxwell Marumbwa | All Rights Reserved</p>
         <div class="hstack gap-3">
-          <a href="#">
-            <i class="fab fa-facebook fa-2x text-white"></i>
-          </a>
-          <a class="text-decoration-none" href="#">
-            <i class="fab fa-twitter fa-2x text-white"></i>
-          </a>
-          <a class="text-decoration-none" href="#">
-            <i class="fab fa-instagram fa-2x text-white"></i>
-          </a>
-          <a class="text-decoration-none" href="#">
-            <i class="fab fa-linkedin fa-2x text-white"></i>
-          </a>
-          <a class="text-decoration-none" href="#">
-            <i class="fab fa-dribbble fa-2x text-white"></i>
-          </a>
+          <a href="#"><i class="fab fa-facebook fa-2x text-white"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x text-white"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-2x text-white"></i></a>
+          <a href="#"><i class="fab fa-linkedin fa-2x text-white"></i></a>
+          <a href="#"><i class="fab fa-dribbble fa-2x text-white"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/lightbox-plus-jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <!-- scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    (function () {
+      const el = document.getElementById('typing-text');
+      const name = "Farai Maxwell Marumbwa (PhD)";
+      let i = 0;
+      function typeWriter() {
+        if (i < name.length) {
+          el.innerHTML += name.charAt(i);
+          i++;
+          setTimeout(typeWriter, 80);
+        } else {
+          el.style.borderRight = 'none';
+        }
+      }
+      el.innerHTML = '';
+      typeWriter();
+    })();
+  </script>
 </body>
 
 </html>
