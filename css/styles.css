@@ -76,3 +76,41 @@
     padding-bottom: 20px;
   }
 }
+
+.project-img {
+  overflow: hidden;
+}
+
+.project-img img {
+  transition: transform 0.5s ease;
+}
+
+.project-img:hover img {
+  transform: scale(1.05);
+}
+
+.view-gallery-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.project-img:hover .view-gallery-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.view-gallery-btn:hover {
+  background: #0d6efd;
+  color: #fff;
+}

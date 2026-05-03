@@ -197,7 +197,6 @@
       </div>
   </section>
 
-
   <!-- Portfolio -->
   <section class="portfolio py-5 bg-light">
     <div class="container">
@@ -208,13 +207,34 @@
         <h2 class="text-uppercase fw-bold text-dark">Featured Projects</h2>
       </div>
 
-      <!-- Responsive Grid -->
       <div class="row row-cols-1 row-cols-md-2 g-4">
 
         <!-- PROJECT 1 -->
         <div class="col">
           <div class="project shadow rounded-4 overflow-hidden">
-            <img src="images/portfolio1/project1.jpg" class="img-fluid">
+
+            <!-- IMAGE WRAPPER -->
+            <div class="position-relative project-img">
+
+              <a href="images/portfolio1/project1.jpg" data-lightbox="project1"
+                data-title="Political Violence Dashboard">
+                <img src="images/portfolio1/project1.jpg" class="img-fluid">
+              </a>
+
+              <!-- VIEW GALLERY BUTTON -->
+              <a href="images/portfolio1/project2.jpg" data-lightbox="project1" class="view-gallery-btn">
+                View Gallery
+              </a>
+
+              <!-- hidden images -->
+              <a href="images/portfolio1/project3.jpg" data-lightbox="project1"></a>
+              <a href="images/portfolio1/project4.jpg" data-lightbox="project1"></a>
+
+            </div>
+
+            <div class="text-center bg-white py-1 border-bottom">
+              <small class="text-muted">Click to view project screenshots</small>
+            </div>
 
             <div class="p-3">
               <h6 class="fw-bold mb-1">Political Violence Dashboard</h6>
@@ -222,23 +242,44 @@
                 Full-stack analytics system for early warning and humanitarian planning.
               </p>
 
-              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank"
+              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard"
                 class="btn btn-success btn-sm me-1">Live</a>
 
-              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank"
+              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard"
                 class="btn btn-dark btn-sm me-1">Code</a>
 
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
                 Details
               </button>
             </div>
+
           </div>
         </div>
 
         <!-- PROJECT 2 -->
         <div class="col">
           <div class="project shadow rounded-4 overflow-hidden">
-            <img src="images/portfolio2/project1.jpg" class="img-fluid">
+
+            <div class="position-relative project-img">
+
+              <a href="images/portfolio2/project1.jpg" data-lightbox="project2"
+                data-title="AgroClimate Intelligence Dashboard">
+                <img src="images/portfolio2/project1.jpg" class="img-fluid">
+              </a>
+
+              <!-- VIEW GALLERY BUTTON -->
+              <a href="images/portfolio2/project2.jpg" data-lightbox="project2" class="view-gallery-btn">
+                View Gallery
+              </a>
+
+              <!-- hidden images -->
+              <a href="images/portfolio2/project3.jpg" data-lightbox="project2"></a>
+
+            </div>
+
+            <div class="text-center bg-white py-1 border-bottom">
+              <small class="text-muted">Click to view project screenshots</small>
+            </div>
 
             <div class="p-3">
               <h6 class="fw-bold mb-1">AgroClimate Intelligence Dashboard</h6>
@@ -246,195 +287,22 @@
                 Geospatial platform for climate risk and agriculture monitoring.
               </p>
 
-              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor/tree/main"
+              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor"
                 class="btn btn-success btn-sm me-1">Live</a>
 
-              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor/tree/main"
-                class="btn btn-dark btn-sm me-1">Code</a>
+              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor" class="btn btn-dark btn-sm me-1">Code</a>
 
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
                 Details
               </button>
             </div>
+
           </div>
         </div>
-
-
 
       </div>
     </div>
   </section>
-
-  <!-- ================= MODALS ================= -->
-
-  <!-- PROJECT 1 MODAL -->
-  <div class="modal fade" id="project1Modal" tabindex="-1">
-    <div class="modal-dialog modal-md modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header py-2">
-          <h6 class="fw-bold">Political Violence Dashboard</h6>
-          <button class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body small">
-          <p>
-            A full-stack information management and analytics system for monitoring political violence and supporting
-            early warning and humanitarian response planning. The system integrates Django REST APIs, PostGIS, and
-            interactive Leaflet maps. The dashboard has automated analytics, data import and and export (CSV/GeoJSON).
-          </p>
-          <h6 class="fw-bold">Key Features</h6>
-          <ul>
-            <li>Interactive choropleth maps at province level</li>
-            <li>Monthly & yearly anomaly detection (baseline vs actual)</li>
-            <li>Dual-map comparison for temporal analysis</li>
-            <li>Dynamic charts with user controls</li>
-            <li>Multi-province aggregation</li>
-            <li>CSV & GeoJSON export</li>
-            <li>Automated CSV ingestion pipeline</li>
-            <li>Temporal animation tools</li>
-          </ul>
-
-          <h6 class="fw-bold mt-3">Technical Architecture</h6>
-          <ul>
-            <li><strong>Backend:</strong> Django, Django REST Framework</li>
-            <li><strong>Database:</strong> PostgreSQL with PostGIS</li>
-            <li><strong>Frontend:</strong> Leaflet, JavaScript, HTML/CSS</li>
-            <li><strong>Processing:</strong> Pandas (baseline & anomaly computation)</li>
-          </ul>
-
-          <h6 class="fw-bold mt-3">Analytical Capabilities</h6>
-          <ul>
-            <li>Monthly baseline computation</li>
-            <li>Anomaly detection</li>
-            <li>Province-level ranking</li>
-            <li>Time-series trend analysis</li>
-            <li>Multi-region comparison</li>
-          </ul>
-
-          <div class="modal-footer">
-            <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank"
-              class="btn btn-dark">
-              View GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-  <!-- PROJECT 2 MODAL -->
-  <div class="modal fade" id="project2Modal" tabindex="-1">
-    <div class="modal-dialog modal-md modal-dialog-scrollable">
-      <div class="modal-content">
-
-        <div class="modal-header py-2">
-          <h6 class="fw-bold">AgroClimate Intelligence Dashboard</h6>
-          <button class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-
-        <div class="modal-body small">
-
-          <p>
-            A production-ready geospatial decision-support platform that transforms Earth Observation data into
-            actionable insights for drought monitoring, agricultural risk analysis, and climate early warning in
-            Zimbabwe.
-            Designed to bridge the gap between remote sensing analytics and operational humanitarian decision-making.
-          </p>
-
-          <h6 class="fw-bold mt-3">Key Features</h6>
-
-          <div class="mb-3">
-            <strong>Multi-Source Earth Observation Integration</strong>
-            <ul>
-              <li>Integrates CHIRPS rainfall, MODIS NDVI, ERA5 temperature</li>
-              <li>Time-enabled raster visualization with dynamic layer controls</li>
-            </ul>
-          </div>
-
-          <div class="mb-3">
-            <strong>Near Real-Time Geospatial Visualization</strong>
-            <ul>
-              <li>Interactive Leaflet maps with choropleth and raster layers</li>
-              <li>Province-level aggregation and ranking</li>
-            </ul>
-          </div>
-
-          <div class="mb-3">
-            <strong>Anomaly Detection & Early Warning System</strong>
-            <ul>
-              <li>Computes deviations from long-term baselines:</li>
-              <ul>
-                <li>rainfall_monthly_baseline</li>
-                <li>ndvi_monthly_baseline</li>
-                <li>ndvi_anomaly</li>
-                <li>Vegetation Condition Index</li>
-              </ul>
-              <li>Identifies climate stress signals and emerging drought conditions</li>
-              <li>Converts satellite data into early warning indicators</li>
-            </ul>
-          </div>
-
-          <div class="mb-3">
-            <strong>User-Driven Spatial Analytics (AOI-Based Analysis)</strong>
-            <ul>
-              <li>Interactive polygon drawing tools for custom Area of Interest (AOI)</li>
-              <li>On-demand computation of:
-                <ul>
-                  <li>Mean rainfall and NDVI</li>
-                  <li>Area-based statistics</li>
-                </ul>
-              </li>
-              <li>Outputs:
-                <ul>
-                  <li>Time-series charts (trend analysis)</li>
-                  <li>Downloadable CSV datasets</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mb-3">
-            <strong>Reporting & Decision Support</strong>
-            <ul>
-              <li>Automated generation of analytical outputs and visual reports</li>
-              <li>Designed for integration into early warning systems</li>
-              <li>Supports humanitarian reporting workflows</li>
-            </ul>
-          </div>
-
-          <h6 class="fw-bold mt-3">Technical Architecture</h6>
-
-          <ul>
-            <li><strong>Backend:</strong> Django, Python REST APIs, Google Earth Engine (GEE)</li>
-            <li><strong>Database:</strong> PostgreSQL with PostGIS</li>
-            <li><strong>Frontend:</strong> Leaflet, JavaScript, HTML/CSS</li>
-            <li><strong>Data Pipelines:</strong> Automated ingestion and processing of satellite time-series data</li>
-          </ul>
-
-          <div class="modal-footer">
-            <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor" target="_blank" class="btn btn-dark">
-              View GitHub
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="modal-footer">
-    <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank" class="btn btn-dark">
-      View GitHub
-    </a>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-
-
-
 
 
 
