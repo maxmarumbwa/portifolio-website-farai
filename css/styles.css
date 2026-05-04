@@ -114,3 +114,57 @@
   background: #0d6efd;
   color: #fff;
 }
+
+.project-video {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+  background: #000;
+}
+
+.preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.4s ease;
+}
+
+.project-video:hover .preview-video {
+  transform: scale(1.08);
+}
+
+/* VIEW GALLERY BUTTON */
+.view-gallery-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.project-video:hover .view-gallery-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.view-gallery-btn:hover {
+  background: #0d6efd;
+}
+
+/* Override Bootstrap's .btn-sm styles for the modals */
+.btn-sm {
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+  line-height: 1.2;
+  border-radius: 5px !important;
+
+}

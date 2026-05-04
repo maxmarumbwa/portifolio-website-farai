@@ -207,34 +207,27 @@
         <h2 class="text-uppercase fw-bold text-dark">Featured Projects</h2>
       </div>
 
+      <!-- Responsive Grid -->
       <div class="row row-cols-1 row-cols-md-2 g-4">
 
         <!-- PROJECT 1 -->
         <div class="col">
           <div class="project shadow rounded-4 overflow-hidden">
 
-            <!-- IMAGE WRAPPER -->
-            <div class="position-relative project-img">
+            <!-- MAIN IMAGE (CLICKABLE) -->
+            <a href="images/portfolio1/project1.jpg" data-lightbox="project1" data-title="Political Violence Dashboard">
+              <img src="images/portfolio1/project1.jpg" class="img-fluid">
+            </a>
 
-              <a href="images/portfolio1/project1.jpg" data-lightbox="project1"
-                data-title="Political Violence Dashboard">
-                <img src="images/portfolio1/project1.jpg" class="img-fluid">
-              </a>
-
-              <!-- VIEW GALLERY BUTTON -->
-              <a href="images/portfolio1/project2.jpg" data-lightbox="project1" class="view-gallery-btn">
-                View Gallery
-              </a>
-
-              <!-- hidden images -->
-              <a href="images/portfolio1/project3.jpg" data-lightbox="project1"></a>
-              <a href="images/portfolio1/project4.jpg" data-lightbox="project1"></a>
-
-            </div>
-
+            <!-- CLICK HINT
             <div class="text-center bg-white py-1 border-bottom">
               <small class="text-muted">Click to view project screenshots</small>
-            </div>
+            </div> -->
+
+            <!-- HIDDEN GALLERY IMAGES -->
+            <a href="images/portfolio1/project2.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project3.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project4.jpg" data-lightbox="project1"></a>
 
             <div class="p-3">
               <h6 class="fw-bold mb-1">Political Violence Dashboard</h6>
@@ -242,14 +235,14 @@
                 Full-stack analytics system for early warning and humanitarian planning.
               </p>
 
-              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard"
-                class="btn btn-success btn-sm me-1">Live</a>
+              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank"
+                class="btn btn-success btn-sm me-1">Launch App</a>
 
-              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard"
-                class="btn btn-dark btn-sm me-1">Code</a>
+              <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank"
+                class="btn btn-dark btn-sm me-1">View Code</a>
 
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
-                Details
+                View app details
               </button>
             </div>
 
@@ -260,26 +253,20 @@
         <div class="col">
           <div class="project shadow rounded-4 overflow-hidden">
 
-            <div class="position-relative project-img">
-
-              <a href="images/portfolio2/project1.jpg" data-lightbox="project2"
-                data-title="AgroClimate Intelligence Dashboard">
-                <img src="images/portfolio2/project1.jpg" class="img-fluid">
-              </a>
-
-              <!-- VIEW GALLERY BUTTON -->
-              <a href="images/portfolio2/project2.jpg" data-lightbox="project2" class="view-gallery-btn">
-                View Gallery
-              </a>
-
-              <!-- hidden images -->
-              <a href="images/portfolio2/project3.jpg" data-lightbox="project2"></a>
-
-            </div>
-
+            <!-- MAIN IMAGE (CLICKABLE) -->
+            <a href="images/portfolio2/project1.jpg" data-lightbox="project2"
+              data-title="AgroClimate Intelligence Dashboard">
+              <img src="images/portfolio2/project1.jpg" class="img-fluid">
+            </a>
+            <!-- 
+            CLICK HINT
             <div class="text-center bg-white py-1 border-bottom">
               <small class="text-muted">Click to view project screenshots</small>
-            </div>
+            </div> -->
+
+            <!-- HIDDEN GALLERY IMAGES -->
+            <a href="images/portfolio2/project2.jpg" data-lightbox="project2"></a>
+            <a href="images/portfolio2/project3.jpg" data-lightbox="project2"></a>
 
             <div class="p-3">
               <h6 class="fw-bold mb-1">AgroClimate Intelligence Dashboard</h6>
@@ -287,13 +274,14 @@
                 Geospatial platform for climate risk and agriculture monitoring.
               </p>
 
-              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor"
-                class="btn btn-success btn-sm me-1">Live</a>
+              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor/tree/main"
+                class="btn btn-success btn-sm me-1">Launch App</a>
 
-              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor" class="btn btn-dark btn-sm me-1">Code</a>
+              <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor/tree/main"
+                class="btn btn-dark btn-sm me-1">View Code</a>
 
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
-                Details
+                View app details
               </button>
             </div>
 
@@ -303,6 +291,108 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- PROJECT 1 MODAL -->
+  <div class="modal fade" id="project1Modal" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h6 class="fw-bold">Political Violence Dashboard</h6>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body small">
+          <p>
+            A full-stack information management and analytics system for monitoring political violence and supporting
+            early warning and humanitarian response planning. The system integrates Django REST APIs, PostGIS, and
+            interactive Leaflet maps. The dashboard has automated analytics, data import and export (CSV/GeoJSON).
+          </p>
+
+          <h6 class="fw-bold">Key Features</h6>
+          <ul>
+            <li>Interactive choropleth maps at province level</li>
+            <li>Monthly & yearly anomaly detection</li>
+            <li>Dual-map comparison for temporal analysis</li>
+            <li>Dynamic charts with user controls</li>
+            <li>Multi-province aggregation</li>
+            <li>CSV & GeoJSON export</li>
+            <li>Automated CSV ingestion pipeline</li>
+            <li>Temporal animation tools</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Technical Architecture</h6>
+          <ul>
+            <li><strong>Backend:</strong> Django, Django REST Framework</li>
+            <li><strong>Database:</strong> PostgreSQL with PostGIS</li>
+            <li><strong>Frontend:</strong> Leaflet, JavaScript, HTML/CSS</li>
+            <li><strong>Processing:</strong> Pandas</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Analytical Capabilities</h6>
+          <ul>
+            <li>Baseline vs anomaly detection</li>
+            <li>Trend analysis</li>
+            <li>Regional comparisons</li>
+          </ul>
+
+          <div class="modal-footer">
+            <a href="https://github.com/maxmarumbwa/Combined-Disaster-Conflict-Dashboard" target="_blank"
+              class="btn btn-dark">
+              View GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROJECT 2 MODAL -->
+  <div class="modal fade" id="project2Modal" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header py-2">
+          <h6 class="fw-bold">AgroClimate Intelligence Dashboard</h6>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body small">
+          <p>
+            A geospatial decision-support platform for drought monitoring, agricultural risk analysis, and climate
+            early warning in Zimbabwe using satellite Earth Observation data.
+          </p>
+
+          <h6 class="fw-bold mt-3">Key Features</h6>
+          <ul>
+            <li>CHIRPS rainfall and MODIS NDVI</li>
+            <li>Interactive Leaflet maps</li>
+            <li>NDVI & rainfall anomaly detection</li>
+            <li>AOI-based analysis tools</li>
+            <li>Time-series chart generation</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Technical Architecture</h6>
+          <ul>
+            <li><strong>Backend:</strong> Django, Google Earth Engine</li>
+            <li><strong>Database:</strong> PostGIS</li>
+            <li><strong>Frontend:</strong> Leaflet, JavaScript</li>
+          </ul>
+
+          <div class="modal-footer">
+            <a href="https://github.com/maxmarumbwa/geostat_agro_-monitor" target="_blank" class="btn btn-dark">
+              View GitHub
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
 
