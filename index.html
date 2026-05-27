@@ -220,14 +220,14 @@
       <!-- Responsive Grid -->
       <div class="row row-cols-1 row-cols-md-2 g-4">
 
-        <!-- PROJECT 1 -->
+        <!-- PROJECT 3 -->
         <div class="col">
           <div class="project shadow rounded-4 overflow-hidden">
 
             <!-- MAIN IMAGE (CLICKABLE) -->
-            <a href="images/portfolio1/political-violence-main.jpg" data-lightbox="project1"
-              data-title="Political Violence Dashboard">
-              <img src="images/portfolio1/political-violence-main.jpg" class="img-fluid">
+            <a href="images/portfolio3/project1.jpg" data-lightbox="project3"
+              data-title="Global resilience hub dashboard">
+              <img src="images/portfolio3/project1.jpg" class="img-fluid">
             </a>
 
             <!-- CLICK HINT -->
@@ -236,18 +236,20 @@
             </div>
 
             <!-- HIDDEN GALLERY IMAGES -->
-            <a href="images/portfolio1/project2.jpg" data-lightbox="project1"></a>
-            <a href="images/portfolio1/project3.jpg" data-lightbox="project1"></a>
-            <a href="images/portfolio1/project4.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio3/project2.jpg" data-lightbox="project3"></a>
+            <a href="images/portfolio3/project3.jpg" data-lightbox="project3"></a>
+            <a href="images/portfolio3/project4.jpg" data-lightbox="project3"></a>
+            <a href="images/portfolio3/project5.jpg" data-lightbox="project3"></a>
+            <a href="images/portfolio3/project6.jpg" data-lightbox="project3"></a>
 
             <div class="p-3">
-              <h6 class="fw-bold mb-1">Political Violence Dashboard</h6>
+              <h6 class="fw-bold mb-1">Global Resilience Hub Dashboard</h6>
               <p class="small text-muted mb-2">
-                Full-stack analytics system for early warning and humanitarian planning.
+                Integrated Geospatial Monitoring for Climate, Environment and Disaster Resilience.
               </p>
-              <a href="https://combined-disaster-conflict-dashboard.onrender.com" target="_blank"
+              <a href="https://global-resilience-hub.onrender.com/" target="_blank"
                 class="btn btn-success btn-sm me-1">Launch App</a>
-              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">
                 View app details
               </button>
             </div>
@@ -281,10 +283,11 @@
             <div class="p-3">
               <h6 class="fw-bold mb-1">AgroClimate Intelligence Dashboard</h6>
               <p class="small text-muted mb-2">
-                Geospatial platform for climate risk and agriculture monitoring.
+                Geospatial platform for climate risk and agriculture monitoring in Zimbabwe.
               </p>
 
-              <a href="https://green-monitor-zw.onrender.com" class="btn btn-success btn-sm me-1">Launch App</a>
+              <a href="https://green-monitor-zw.onrender.com" target="_blank" class="btn btn-success btn-sm me-1">Launch
+                App</a>
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
                 View app details
               </button>
@@ -292,6 +295,47 @@
 
           </div>
         </div>
+
+
+        <!-- PROJECT 1 -->
+        <div class="col">
+          <div class="project shadow rounded-4 overflow-hidden">
+
+            <!-- MAIN IMAGE (CLICKABLE) -->
+            <a href="images/portfolio1/political-violence-main.jpg" data-lightbox="project1"
+              data-title="Political Violence Dashboard">
+              <img src="images/portfolio1/political-violence-main.jpg" class="img-fluid">
+            </a>
+
+            <!-- CLICK HINT -->
+            <div class="text-center bg-white py-1 border-bottom">
+              <small class="text-muted">Click image to view app screenshots</small>
+            </div>
+
+            <!-- HIDDEN GALLERY IMAGES -->
+            <a href="images/portfolio1/project1.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project2.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project3.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project4.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project5.jpg" data-lightbox="project1"></a>
+            <a href="images/portfolio1/project6.jpg" data-lightbox="project1"></a>
+
+            <div class="p-3">
+              <h6 class="fw-bold mb-1">Political Violence Dashboard</h6>
+              <p class="small text-muted mb-2">
+                Full-stack analytics system for early warning and humanitarian planning.
+              </p>
+              <a href="https://combined-disaster-conflict-dashboard.onrender.com" target="_blank"
+                class="btn btn-success btn-sm me-1">Launch App</a>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                View app details
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+
 
       </div>
     </div>
@@ -301,6 +345,57 @@
   <!-- ================= MODALS ================= -->
 
   <!-- PROJECT 1 MODAL -->
+  <div class="modal fade" id="project3Modal" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h6 class="fw-bold">🌍 Global Resilience Hub – Integrated Geospatial Monitoring Platform</h6>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body small">
+          <p>
+            A full‑stack Django platform powered by <strong>Google Earth Engine (GEE)</strong> for global‑scale
+            computing and per‑country geospatial analysis. The system processes and visualises
+            climate, environmental, food security, and disaster risk indicators across any country or region.
+
+          <h6 class="fw-bold">Key Features</h6>
+          <ul>
+            <li><strong>GEE‑driven indicators:</strong> rainfall (CHIRPS/GSMaP), NDVI (MODIS/Sentinel), soil moisture
+              (ESA CCI), land surface temperature (MODIS)</li>
+            <li><strong>Global computing & per‑country analysis:</strong> run zonal statistics, generate tile layers,
+              and extract summaries for any ADM0/ADM1/ADM2</li>
+            <li>Interactive Leaflet maps with dynamic GEE‑generated raster tiles</li>
+            <li>Country filtering and custom date range (start/end) for temporal analysis</li>
+            <li>Toggleable vector overlays: boundaries, rivers, roads, health facilities, schools, markets, livelihood
+              zones, IPC phases</li>
+            <li>REST API endpoints serving GeoJSON and GEE tile URLs</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Technical Architecture</h6>
+          <ul>
+            <li><strong>Computing Engine:</strong> Google Earth Engine (Python API) – all raster analysis, reduction,
+              tile generation</li>
+            <li><strong>Backend API:</strong> Django, Django REST Framework (orchestrates GEE calls, caches results,
+              serves GeoJSON)</li>
+            <li><strong>Frontend:</strong> Leaflet.js, vanilla JavaScript, Bootstrap 5</li>
+            <li><strong>Tiling / Raster:</strong> Dynamic tile endpoints (e.g., rainfall, NDVI)</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Analytical Capabilities</h6>
+          <ul>
+            <li>Multi‑layer situational awareness (climate + food security + risk)</li>
+            <li>Anomaly detection via indicator time‑series</li>
+            <li>Regional aggregation (ADM1, ADM2 pop‑ups)</li>
+            <li>Tile endpoints that return GEE visualisations as ready‑to‑use map layers</li>
+            <li>Export‑ready GeoJSON overlays for offline analysis</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 MODAL -->
   <div class="modal fade" id="project1Modal" tabindex="-1">
     <div class="modal-dialog modal-md modal-dialog-scrollable">
       <div class="modal-content">
@@ -346,8 +441,7 @@
     </div>
   </div>
 
-
-  <!-- PROJECT 2 MODAL -->
+  <!-- PROJECT 3 MODAL -->
   <div class="modal fade" id="project2Modal" tabindex="-1">
     <div class="modal-dialog modal-md modal-dialog-scrollable">
       <div class="modal-content">
