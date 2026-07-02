@@ -233,6 +233,45 @@
       <!-- Responsive Grid -->
       <div class="row row-cols-1 row-cols-md-2 g-4">
 
+
+        <!-- PROJECT 7 -->
+        <div class="col">
+          <div class="project shadow rounded-4 overflow-hidden">
+
+            <!-- MAIN IMAGE (CLICKABLE) -->
+            <a href="images/portfolio7/main.jpg" data-lightbox="project7" data-title="Global resilience hub dashboard">
+              <img src="images/portfolio7/project1.jpg" class="img-fluid">
+            </a>
+
+            <!-- CLICK HINT -->
+            <div class="text-center bg-white py-1 border-bottom">
+              <small class="text-muted">Click image to view app screenshots</small>
+            </div>
+
+            <!-- HIDDEN GALLERY IMAGES -->
+            <a href="images/portfolio7/project1.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project2.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project3.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project4.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project5.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project6.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project7.jpg" data-lightbox="project7"></a>
+            <a href="images/portfolio7/project8.jpg" data-lightbox="project7"></a>
+
+            <div class="p-3">
+              <h6 class="fw-bold mb-1">Global Child & Disaster Risk Intelligence Platform (GCDRIP)</h6>
+              <p class="small text-muted mb-2">
+                Geospatial intelligence for child-centered climate and disaster risk monitoring.
+              </p>
+              <a href="#" target="_blank" class="btn btn-success btn-sm me-1">Launch App</a>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project7Modal">
+                View app details
+              </button>
+            </div>
+
+          </div>
+        </div>
+
         <!-- PROJECT 3 -->
         <div class="col">
           <div class="project shadow rounded-4 overflow-hidden">
@@ -590,7 +629,7 @@
 
           <h6 class="fw-bold mt-3">Key Features</h6>
           <ul>
-            <li>CHIRPS rainfall and MODIS NDVI</li>
+            <li>Baseline environmental and climatic data visualization</li>
             <li>Interactive Leaflet maps</li>
             <li>NDVI & rainfall anomaly detection</li>
             <li>AOI-based analysis tools</li>
@@ -601,6 +640,46 @@
           <ul>
             <li><strong>Backend:</strong> Django, Google Earth Engine</li>
             <li><strong>Database:</strong> PostGIS</li>
+            <li><strong>Frontend:</strong> Leaflet, JavaScript, css, chartjs</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROJECT 7 MODAL -->
+  <div class="modal fade" id="project7Modal" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header py-2">
+          <h6 class="fw-bold">Global Child & Disaster Risk Intelligence Platform (GCDRIP)</h6>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body small">
+          <p>
+            The <strong>Global Child & Disaster Risk Intelligence Platform (GCDRIP)</strong> is an advanced
+            geospatial and statistical decision-support system developed to monitor, analyze, and visualize
+            climate-related hazards, environmental conditions, and child vulnerability indicators. The platform
+            integrates satellite Earth Observation data, global climate datasets, and UNICEF child welfare
+            indicators to provide near real-time insights into environmental risks affecting children.
+          </p>
+
+          <h6 class="fw-bold mt-3">Key Features</h6>
+          <ul>
+            <li>baseline Environmental and climatic data visualization</li>
+            <li>Interactive Leaflet maps</li>
+            <li>NDVI & rainfall anomaly detection</li>
+            <li>AOI-based analysis tools</li>
+            <li>Time-series chart generation</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Technical Architecture</h6>
+          <ul>
+            <li><strong>Backend:</strong> Django</li>
             <li><strong>Frontend:</strong> Leaflet, JavaScript</li>
           </ul>
         </div>
@@ -608,6 +687,7 @@
       </div>
     </div>
   </div>
+
 
 
   <!-- API1 PROJECT MODAL-->
