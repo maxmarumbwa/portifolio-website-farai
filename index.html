@@ -15,6 +15,26 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <title>Farai Maxwell Marumbwa (PhD) | Geospatial data scientist & Web Developer</title>
+
+  <!-- ADDED CUSTOM CSS FOR UNIFORM IMAGES -->
+  <style>
+    .project-img-wrapper {
+      height: 250px;
+      /* Fixed height for all images */
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Ensures image covers the area without stretching */
+      object-position: top center;
+      /* Keeps the top of the image visible */
+    }
+  </style>
 </head>
 
 <body>
@@ -119,7 +139,8 @@
               <h5 class="text-transform">
                 <i class="fas fa-building text-primary"></i> Current Position:
               </h5>
-              <p>Geospatial data analyst consultant</p>
+              <p><b>UNESCO International Consultant</b> – Regional Water Sector Capacity Gaps and Needs Assessment,
+                Southern Africa</p>
             </li>
             <li class="list-group-item mb-3">
               <h5 class="text-transform">
@@ -236,13 +257,15 @@
 
         <!-- PROJECT 7 -->
         <div class="col">
-          <div class="project shadow rounded-4 overflow-hidden">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
 
-            <!-- MAIN IMAGE (CLICKABLE) -->
-            <a href="images/portfolio7/project1.jpg" data-lightbox="project7"
-              data-title="Global resilience hub dashboard">
-              <img src="images/portfolio7/project1.jpg" class="img-fluid">
-            </a>
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio7/project1.jpg" data-lightbox="project7"
+                data-title="Global resilience hub dashboard">
+                <img src="images/portfolio7/project1.jpg" class="img-fluid">
+              </a>
+            </div>
 
             <!-- CLICK HINT -->
             <div class="text-center bg-white py-1 border-bottom">
@@ -258,7 +281,7 @@
             <a href="images/portfolio7/project7.jpg" data-lightbox="project7"></a>
             <a href="images/portfolio7/project8.jpg" data-lightbox="project7"></a>
 
-            <div class="p-3">
+            <div class="p-3 mt-auto">
               <h6 class="fw-bold mb-1">Global Child & Disaster Risk Intelligence Platform (GCDRIP)</h6>
               <p class="small text-muted mb-2">
                 Geospatial intelligence for child-centered climate and disaster risk monitoring.
@@ -274,13 +297,15 @@
 
         <!-- PROJECT 3 -->
         <div class="col">
-          <div class="project shadow rounded-4 overflow-hidden">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
 
-            <!-- MAIN IMAGE (CLICKABLE) -->
-            <a href="images/portfolio3/project1.jpg" data-lightbox="project3"
-              data-title="Global resilience hub dashboard">
-              <img src="images/portfolio3/project1.jpg" class="img-fluid">
-            </a>
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio3/project1.jpg" data-lightbox="project3"
+                data-title="Global resilience hub dashboard">
+                <img src="images/portfolio3/project1.jpg" class="img-fluid">
+              </a>
+            </div>
 
             <!-- CLICK HINT -->
             <div class="text-center bg-white py-1 border-bottom">
@@ -296,7 +321,7 @@
             <a href="images/portfolio3/project7.jpg" data-lightbox="project3"></a>
             <a href="images/portfolio3/project8.jpg" data-lightbox="project3"></a>
 
-            <div class="p-3">
+            <div class="p-3 mt-auto">
               <h6 class="fw-bold mb-1">Global Resilience Hub Dashboard</h6>
               <p class="small text-muted mb-2">
                 Integrated Geospatial Monitoring for Climate, Environment and Disaster Resilience.
@@ -313,13 +338,15 @@
 
         <!-- PROJECT 2 -->
         <div class="col">
-          <div class="project shadow rounded-4 overflow-hidden">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
 
-            <!-- MAIN IMAGE (CLICKABLE) -->
-            <a href="images/portfolio2/project1.jpg" data-lightbox="project2"
-              data-title="AgroClimate Intelligence Dashboard">
-              <img src="images/portfolio2/project1.jpg" class="img-fluid">
-            </a>
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio2/project1.jpg" data-lightbox="project2"
+                data-title="AgroClimate Intelligence Dashboard">
+                <img src="images/portfolio2/project1.jpg" class="img-fluid">
+              </a>
+            </div>
 
             <!-- CLICK HINT -->
             <div class="text-center bg-white py-1 border-bottom">
@@ -334,12 +361,13 @@
             <a href="images/portfolio2/project6.jpg" data-lightbox="project2"></a>
 
 
-            <div class="p-3">
+            <div class="p-3 mt-auto">
               <h6 class="fw-bold mb-1">AgroClimate Intelligence Dashboard</h6>
               <p class="small text-muted mb-2">
                 Geospatial platform for climate risk and agriculture monitoring in Zimbabwe.
               </p>
-
+              <a href="https://youtu.be/KpdNjaamjxw" target="_blank" class="btn btn-success btn-sm me-1">View demo
+                video</a>
               <a href="https://green-monitor-zw.onrender.com" target="_blank" class="btn btn-success btn-sm me-1">Launch
                 App</a>
               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
@@ -350,16 +378,58 @@
           </div>
         </div>
 
+        <!-- PROJECT 2b -->
+        <div class="col">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
+
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio2b/project1.jpg" data-lightbox="project2b"
+                data-title="AgroClimate Intelligence Dashboard">
+                <img src="images/portfolio2b/project1.jpg" class="img-fluid">
+              </a>
+            </div>
+
+            <!-- CLICK HINT -->
+            <div class="text-center bg-white py-1 border-bottom">
+              <small class="text-muted">Click to view project screenshots</small>
+            </div>
+
+            <!-- HIDDEN GALLERY IMAGES -->
+            <a href="images/portfolio2b/project2.jpg" data-lightbox="project2"></a>
+            <a href="images/portfolio2b/project3.jpg" data-lightbox="project2b"></a>
+            <a href="images/portfolio2b/project4.jpg" data-lightbox="project2b"></a>
+            <a href="images/portfolio2b/project5.jpg" data-lightbox="project2b"></a>
+            <a href="images/portfolio2b/project6.jpg" data-lightbox="project2b"></a>
+
+
+            <div class="p-3 mt-auto">
+              <h6 class="fw-bold mb-1">Sentinel Farm Pulse – Farm-Level EO Intelligence</h6>
+              <p class="small text-muted mb-2">
+                Web-based Earth Observation platform for individual smallholder farm monitoring and early warning in
+                Zimbabwe.
+              </p>
+              <a href="https://youtu.be/k9RfeoHXesQ" target="_blank" class="btn btn-success btn-sm me-1">View demo
+                video</a>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2bModal">
+                View app details
+              </button>
+            </div>
+
+          </div>
+        </div>
 
         <!-- PROJECT 1 -->
         <div class="col">
-          <div class="project shadow rounded-4 overflow-hidden">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
 
-            <!-- MAIN IMAGE (CLICKABLE) -->
-            <a href="images/portfolio1/political-violence-main.jpg" data-lightbox="project1"
-              data-title="Political Violence Dashboard">
-              <img src="images/portfolio1/political-violence-main.jpg" class="img-fluid">
-            </a>
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio1/political-violence-main.jpg" data-lightbox="project1"
+                data-title="Political Violence Dashboard">
+                <img src="images/portfolio1/political-violence-main.jpg" class="img-fluid">
+              </a>
+            </div>
 
             <!-- CLICK HINT -->
             <div class="text-center bg-white py-1 border-bottom">
@@ -374,7 +444,7 @@
             <a href="images/portfolio1/project5.jpg" data-lightbox="project1"></a>
             <a href="images/portfolio1/project6.jpg" data-lightbox="project1"></a>
 
-            <div class="p-3">
+            <div class="p-3 mt-auto">
               <h6 class="fw-bold mb-1">Political Violence Dashboard</h6>
               <p class="small text-muted mb-2">
                 Full-stack analytics system for early warning and humanitarian planning.
@@ -392,13 +462,15 @@
         <!-- API PROJECT 1 -->
         <div class="col">
 
-          <div class="project shadow rounded-4 overflow-hidden">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
 
-            <a href="images/portfolio_API1/API-download raster.jpg" data-lightbox="project_API1">
-
-              <img src="images/portfolio_API1/API-download raster.jpg" class="img-fluid"
-                alt="Satellite Raster Download API">
-            </a>
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio_API1/API-download raster.jpg" data-lightbox="project_API1">
+                <img src="images/portfolio_API1/API-download raster.jpg" class="img-fluid"
+                  alt="Satellite Raster Download API">
+              </a>
+            </div>
 
             <!-- CLICK HINT -->
             <div class="text-center bg-white py-1 border-bottom">
@@ -410,7 +482,7 @@
             <a href="images/portfolio_API1/API-download2.jpg" data-lightbox="project_API1"></a>
 
 
-            <div class="p-3">
+            <div class="p-3 mt-auto">
 
               <h5 class="fw-bold">
                 <h6 class="fw-bold mb-1"> Satellite Raster Download API</h6>
@@ -442,15 +514,15 @@
         <!--API PROJECT 2 -->
         <div class="col">
 
-          <div class="project shadow rounded-4 overflow-hidden">
+          <div class="project shadow rounded-4 overflow-hidden d-flex flex-column h-100">
 
-            <a href="images/portfolio_API2/API2-pixel-stats.jpg" style="width:100%; height:100%; object-fit:cover;"
-              data-lightbox="project_API2">
-
-              <img src="images/portfolio_API2/API2-pixel-stats.jpg" class="img-fluid"
-                alt="Satellite Pixel Inspector API">
-
-            </a>
+            <!-- MAIN IMAGE (CLICKABLE) WITH WRAPPER -->
+            <div class="project-img-wrapper">
+              <a href="images/portfolio_API2/API2-pixel-stats.jpg" data-lightbox="project_API2">
+                <img src="images/portfolio_API2/API2-pixel-stats.jpg" class="img-fluid"
+                  alt="Satellite Pixel Inspector API">
+              </a>
+            </div>
 
             <!-- CLICK HINT -->
             <div class="text-center bg-white py-1 border-bottom">
@@ -463,7 +535,7 @@
             <a href="images/portfolio_API2/API2-out.jpg" data-lightbox="project_API2"></a>
             <a href="images/portfolio_API2/API2-output.jpg" data-lightbox="project_API2"></a>
 
-            <div class="p-3">
+            <div class="p-3 mt-auto">
 
               <h5 class="fw-bold">
                 <h6 class="fw-bold mb-1">Earth Observation Pixel Extraction API</h6>
@@ -603,6 +675,109 @@
       </div>
     </div>
   </div>
+
+
+
+  <!-- PROJECT 2b MODAL -->
+  <div class="modal fade" id="project2bModal" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header py-2">
+          <h6 class="fw-bold">Sentinel Farm Pulse – Farm-Level EO Intelligence</h6>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body small">
+
+          <p>
+            <strong>Sentinel Farm Pulse</strong> is a web-based Earth Observation
+            and agricultural intelligence system being developed and tested in
+            Zimbabwe to monitor individual smallholder farms using satellite
+            imagery and geospatial analytics.
+          </p>
+
+          <p>
+            Africa's communal farming systems are characterized by thousands of
+            small, fragmented and irregularly shaped fields. Extracting reliable
+            satellite-derived information at individual farm level presents
+            challenges associated with mixed pixels, boundary effects and
+            geolocation uncertainty, even with Sentinel-2's 10 m spatial
+            resolution.
+          </p>
+
+          <p>
+            Sentinel Farm Pulse addresses this challenge by moving from
+            conventional administrative-area monitoring to individual
+            farm-level intelligence. The browser-based platform allows users
+            to digitize farm boundaries, record crop information and
+            automatically calculate farm areas without requiring desktop GIS
+            software or specialist GIS and Remote Sensing training.
+          </p>
+
+          <p>
+            Farm geometries are stored in PostGIS and linked to Sentinel-2
+            satellite observations and other environmental indicators.
+            NDVI is extracted for individual farms, enabling historical
+            vegetation monitoring, anomaly detection and threshold-based
+            alerts. The system brings farm boundaries, crop information,
+            vegetation conditions, rainfall and alert status together in
+            an integrated agricultural monitoring dashboard.
+          </p>
+
+          <h6 class="fw-bold mt-3">Key Features & Workflow</h6>
+          <ul>
+            <li>Browser-based farm boundary digitization</li>
+            <li>Automatic farm area calculation</li>
+            <li>Farm registration, crop type and attribute management</li>
+            <li>Spatial storage and management of farm geometries in PostGIS</li>
+            <li>Sentinel-2 satellite imagery integration</li>
+            <li>Individual farm-level NDVI extraction</li>
+            <li>Historical vegetation time-series analysis</li>
+            <li>Vegetation anomaly detection and monitoring</li>
+            <li>Rainfall and other environmental indicator integration</li>
+            <li>Threshold-based vegetation alerts</li>
+            <li>Centralized dashboard showing farm area, crop type,
+              latest NDVI, rainfall and alert status</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">AI-Assisted Farm Boundary Extraction</h6>
+          <p>
+            The next development phase will explore integrating the
+            Segment Anything Model (SAM) and SamGeo to support
+            AI-assisted field-boundary extraction. This will complement
+            manual digitization and potentially accelerate the mapping
+            of large numbers of fragmented smallholder farms.
+          </p>
+
+          <h6 class="fw-bold mt-3">Technical Architecture</h6>
+          <ul>
+            <li><strong>Backend:</strong> Django, Python</li>
+            <li><strong>Database:</strong> PostgreSQL, PostGIS</li>
+            <li><strong>Earth Observation:</strong> Sentinel-2, Google Earth Engine</li>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap</li>
+            <li><strong>Mapping:</strong> Leaflet</li>
+            <li><strong>Analytics:</strong> NDVI extraction, time-series analysis,
+              vegetation anomaly detection</li>
+            <li><strong>Planned AI Integration:</strong> Segment Anything Model
+              (SAM), SamGeo</li>
+          </ul>
+
+          <h6 class="fw-bold mt-3">Development Vision</h6>
+          <p>
+            Initially being developed and tested in Zimbabwe, Sentinel Farm
+            Pulse has a broader vision of supporting smallholder agricultural
+            monitoring across Africa through accessible, scalable and
+            farm-level Earth Observation intelligence.
+          </p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- PROJECT 3 MODAL -->
   <div class="modal fade" id="project2Modal" tabindex="-1">
